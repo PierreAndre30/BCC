@@ -610,7 +610,8 @@ p {
 
 .contact-text h2,
 .contact-text h2 em,
-.contact-text p {
+.contact-text p,
+.contact-text .section-label {
     color: #FFFFFF;
 }
 
