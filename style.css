@@ -1820,3 +1820,223 @@ button {
     }
 }
 
+
+/* =====================================================
+   ACCESSIBILITÉ — DALTONISME ET DYSLEXIE
+   Site Caroline BECAMEL
+   ===================================================== */
+
+
+/* 1. TYPOGRAPHIE ET CONFORT DE LECTURE */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #545454;
+    line-height: 1.6;
+    text-align: left;
+    letter-spacing: 0.02em;
+    word-spacing: 0.05em;
+}
+
+/* Tous les textes restent alignés à gauche */
+p,
+li,
+label,
+span,
+div {
+    text-align: left;
+}
+
+/* Les titres restent lisibles et bien espacés */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Verdana, Geneva, sans-serif;
+    color: #000000;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+/* Éviter les paragraphes trop compacts */
+p {
+    margin-bottom: 1.2em;
+}
+
+
+/* 2. COULEURS ET CONTRASTES */
+
+body {
+    background-color: #FFFFFF;
+    color: #545454;
+}
+
+/* Les liens utilisent le bleu sur fond clair */
+a {
+    color: #303CE9;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #000000;
+}
+
+/* Les boutons verts ont un texte noir */
+.button,
+.button-primary,
+.nav-button,
+.formula-button {
+    background-color: #5CFFB0;
+    color: #000000;
+    font-weight: 700;
+    border: 2px solid #000000;
+    text-decoration: none;
+}
+
+/* Survol des boutons */
+.button:hover,
+.button-primary:hover,
+.nav-button:hover,
+.formula-button:hover {
+    background-color: #303CE9;
+    color: #FFFFFF;
+    border-color: #303CE9;
+}
+
+
+/* 3. CARTES ET FORMULES */
+
+.formula-card {
+    background-color: #FFFFFF;
+    color: #545454;
+    border: 2px solid #545454;
+}
+
+/* Les couleurs servent de repères visuels,
+   sans être le seul moyen de distinguer les cartes */
+
+.formula-blue {
+    border-color: #303CE9;
+}
+
+.formula-green {
+    border-color: #008A58;
+}
+
+.formula-red {
+    border-color: #B3261E;
+}
+
+.formula-yellow {
+    border-color: #9A6500;
+}
+
+/* Numéros et icônes dans des cercles */
+.formula-number,
+.formula-icon,
+.card-icon,
+.visual-circle {
+    border-radius: 50%;
+}
+
+/* Les éléments verts utilisent un texte noir */
+.formula-number,
+.formula-icon {
+    background-color: #5CFFB0;
+    color: #000000;
+}
+
+
+/* 4. FORMULAIRES ET ÉLÉMENTS INTERACTIFS */
+
+input,
+textarea,
+select {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 2px solid #545454;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #303CE9;
+    outline-offset: 3px;
+}
+
+
+/* 5. ACCESSIBILITÉ AU CLAVIER */
+
+/* Un contour bien visible lorsqu'on navigue au clavier */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #303CE9;
+    outline-offset: 4px;
+}
+
+/* Les boutons restent facilement identifiables */
+button,
+.button,
+.button-primary,
+.nav-button,
+.formula-button {
+    cursor: pointer;
+    min-height: 44px;
+}
+
+
+/* 6. ANIMATIONS PLUS DOUCES */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* 7. CONFORT SUR MOBILE */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    p,
+    li {
+        line-height: 1.7;
+    }
+
+    .formula-card {
+        padding: 22px;
+    }
+
+    a,
+    button {
+        min-height: 44px;
+    }
+}
