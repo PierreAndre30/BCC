@@ -1,39 +1,30 @@
+
 /* =========================================================
-   VARIABLES
+   1. VARIABLES ET COULEURS
 ========================================================= */
 
 :root {
+    --green: #5CFFB0;
+    --blue: #303CE9;
 
-    --cream: #f8f5ef;
-    --cream-dark: #eee8dc;
+    --text: #545454;
+    --black: #000000;
     --white: #ffffff;
 
-    --beige: #9b8972;
-    --beige-dark: #675746;
-    --brown: #493f35;
+    --background: #ffffff;
+    --background-soft: #f5f7fa;
 
-    --text: #39352f;
-    --text-light: #777068;
+    --font-main: Verdana, Geneva, sans-serif;
 
-    --blue: #b8d1df;
-    --blue-dark: #54778c;
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
 
-    --green: #b9cfbd;
-    --green-dark: #54745b;
-
-    --red: #d9a39b;
-    --red-dark: #965b53;
-
-    --shadow: 0 20px 50px rgba(75, 62, 48, 0.08);
-
-    --radius: 24px;
-    --radius-small: 14px;
-
+    --radius: 22px;
+    --radius-small: 12px;
 }
 
 
 /* =========================================================
-   RESET
+   2. RESET ET BASE
 ========================================================= */
 
 * {
@@ -42,63 +33,84 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
-
 
 body {
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-main);
     color: var(--text);
-    background: var(--cream);
-    line-height: 1.7;
+    background: var(--background);
+    line-height: 1.5;
+    text-align: left;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a,
+span,
+strong,
+small {
+    font-family: var(--font-main);
+    line-height: 1.5;
+}
+
+p,
+li {
+    text-align: left;
+}
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
-
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
-
 
 button,
 a {
     -webkit-tap-highlight-color: transparent;
 }
 
+button {
+    font-family: var(--font-main);
+}
+
 
 /* =========================================================
-   CONTAINER
+   3. CONTENEUR
 ========================================================= */
 
 .container {
     width: min(1120px, calc(100% - 40px));
-    margin: auto;
+    margin: 0 auto;
 }
 
 
 /* =========================================================
-   HEADER
+   4. HEADER ET NAVIGATION
 ========================================================= */
 
 .header {
-    background: rgba(248, 245, 239, 0.94);
-    border-bottom: 1px solid rgba(103, 87, 70, 0.12);
-
     position: sticky;
     top: 0;
     z-index: 100;
 
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid rgba(48, 60, 233, 0.10);
+
     backdrop-filter: blur(12px);
 }
-
 
 .navigation {
     min-height: 82px;
@@ -110,286 +122,20 @@ a {
     gap: 30px;
 }
 
-
-/* LOGO */
+/* Logo */
 
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
 
-    color: var(--brown);
+    color: var(--black);
 }
-
 
 .logo-symbol {
     width: 42px;
     height: 42px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 50%;
-
-    background: var(--beige-dark);
-    color: var(--cream);
-
-    font-size: 18px;
-}
-
-
-.logo strong {
-    display: block;
-
-    font-family: "Playfair Display", serif;
-    font-size: 17px;
-    line-height: 1.2;
-}
-
-
-.logo small {
-    display: block;
-
-    color: var(--text-light);
-
-    font-size: 10px;
-    letter-spacing: 0.5px;
-}
-
-
-/* MENU */
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-
-.nav-menu > a {
-    position: relative;
-    color: var(--beige-dark);
-}
-
-
-.nav-menu > a:not(.nav-button)::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: -7px;
-
-    width: 0;
-    height: 2px;
-
-    background: var(--beige-dark);
-
-    transition: width 0.3s ease;
-}
-
-
-.nav-menu > a:not(.nav-button):hover::after {
-    width: 100%;
-}
-
-
-.nav-button {
-    padding: 11px 19px;
-
-    border-radius: 100px;
-
-    background: var(--beige-dark);
-    color: white !important;
-
-    transition: transform 0.3s ease,
-                background 0.3s ease;
-}
-
-
-.nav-button:hover {
-    transform: translateY(-2px);
-    background: var(--brown);
-}
-
-
-.nav-button.active {
-    background: var(--brown);
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 100px 0 110px;
-
-    background:
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(185, 207, 189, 0.28),
-            transparent 30%
-        ),
-        var(--cream);
-}
-
-
-.hero-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 0.85fr;
-
-    align-items: center;
-
-    gap: 80px;
-}
-
-
-.eyebrow,
-.section-label {
-    display: inline-block;
-
-    color: var(--beige-dark);
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-
-.hero h1 {
-    max-width: 650px;
-
-    margin: 18px 0 24px;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(46px, 6vw, 76px);
-
-    font-weight: 600;
-
-    line-height: 1.05;
-
-    letter-spacing: -2px;
-}
-
-
-.hero h1 span,
-.formules-hero h1 span {
-    display: block;
-
-    color: var(--beige);
-    font-style: italic;
-}
-
-
-.hero-description {
-    max-width: 570px;
-
-    color: var(--text-light);
-
-    font-size: 17px;
-
-    line-height: 1.8;
-}
-
-
-.hero-buttons {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 13px;
-
-    margin-top: 35px;
-}
-
-
-/* BUTTONS */
-
-.button {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 52px;
-
-    padding: 0 25px;
-
-    border-radius: 100px;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-}
-
-
-.button:hover {
-    transform: translateY(-3px);
-}
-
-
-.button-primary {
-    background: var(--beige-dark);
-    color: white;
-
-    box-shadow: 0 10px 25px rgba(103, 87, 70, 0.2);
-}
-
-
-.button-primary:hover {
-    background: var(--brown);
-
-    box-shadow:
-        0 15px 30px rgba(103, 87, 70, 0.25);
-}
-
-
-.button-secondary {
-    border: 1px solid rgba(103, 87, 70, 0.25);
-
-    color: var(--beige-dark);
-}
-
-
-.button-secondary:hover {
-    background: white;
-}
-
-
-.hero-note {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-top: 24px;
-
-    color: var(--text-light);
-
-    font-size: 12px;
-}
-
-
-.hero-note span {
-    width: 21px;
-    height: 21px;
+    flex-shrink: 0;
 
     display: grid;
     place-items: center;
@@ -397,15 +143,273 @@ a {
     border-radius: 50%;
 
     background: var(--green);
+    color: var(--blue);
 
-    color: var(--green-dark);
+    font-size: 20px;
+}
 
-    font-size: 11px;
+.logo strong {
+    display: block;
+
+    color: var(--black);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.logo small {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 10px;
+}
+
+/* Menu */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-menu > a {
+    position: relative;
+    color: var(--text);
+
+    transition: color 0.3s ease;
+}
+
+.nav-menu > a:not(.nav-button)::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--blue);
+
+    transition: width 0.3s ease;
+}
+
+.nav-menu > a:not(.nav-button):hover::after {
+    width: 100%;
+}
+
+.nav-menu > a:hover {
+    color: var(--blue);
+}
+
+/* Bouton navigation */
+
+.nav-button {
+    padding: 11px 19px;
+
+    border-radius: 100px;
+
+    background: var(--blue);
+    color: var(--white) !important;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    background: var(--black);
+}
+
+.nav-button.active {
+    background: var(--blue);
 }
 
 
 /* =========================================================
-   HERO VISUAL
+   5. TITRES ET ÉTIQUETTES
+========================================================= */
+
+.eyebrow,
+.section-label {
+    display: inline-block;
+
+    color: var(--blue);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   6. PAGE ACCUEIL : HERO
+========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 100px 0 110px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(92, 255, 176, 0.20),
+            transparent 32%
+        ),
+        var(--background);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero h1 {
+    max-width: 650px;
+
+    margin: 18px 0 24px;
+
+    color: var(--black);
+
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 700;
+
+    line-height: 1.5;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span,
+.formules-hero h1 span {
+    display: block;
+    color: var(--blue);
+}
+
+.hero-description {
+    max-width: 570px;
+
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+
+    margin-top: 30px;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 24px;
+
+    color: var(--text);
+    font-size: 12px;
+}
+
+.hero-note span {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   7. BOUTONS
+========================================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+    padding: 12px 25px;
+
+    border: 0;
+    border-radius: 100px;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background: var(--green);
+    color: var(--black);
+
+    box-shadow: 0 8px 22px rgba(92, 255, 176, 0.25);
+}
+
+.button-primary:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.button-secondary {
+    border: 1px solid var(--blue);
+    background: transparent;
+    color: var(--blue);
+}
+
+.button-secondary:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.button-light {
+    width: max-content;
+    margin-top: 15px;
+
+    background: var(--green);
+    color: var(--black);
+}
+
+.button-light:hover {
+    background: var(--white);
+    color: var(--blue);
+}
+
+
+/* =========================================================
+   8. ILLUSTRATION HERO : CERCLES
 ========================================================= */
 
 .hero-visual {
@@ -417,200 +421,163 @@ a {
     place-items: center;
 }
 
-
 .visual-circle {
     position: absolute;
-
     border-radius: 50%;
 }
-
 
 .circle-one {
     width: 410px;
     height: 410px;
 
     background: var(--green);
-
-    opacity: 0.55;
+    opacity: 0.65;
 }
-
 
 .circle-two {
-    width: 330px;
-    height: 330px;
+    width: 320px;
+    height: 320px;
 
     background: var(--blue);
+    opacity: 0.18;
 
-    opacity: 0.4;
-
-    transform: translate(50px, 45px);
+    transform: translate(45px, 35px);
 }
 
+/* Carte centrale ronde */
 
 .orientation-card {
     position: relative;
     z-index: 2;
 
-    width: 300px;
-    min-height: 370px;
+    width: 340px;
+    height: 340px;
 
-    padding: 45px 35px;
+    padding: 35px;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 
+    border-radius: 50%;
+
+    background: var(--blue);
+    color: var(--white);
+
+    box-shadow: var(--shadow);
+
     text-align: center;
-
-    border-radius: 150px 150px 35px 35px;
-
-    background: var(--beige-dark);
-
-    color: white;
-
-    box-shadow:
-        0 35px 60px rgba(70, 57, 45, 0.2);
-
-    transform: rotate(-3deg);
 }
 
-
 .card-icon {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
 
     display: grid;
     place-items: center;
 
-    margin: 0 auto 22px;
+    margin-bottom: 15px;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.12);
-
-    color: #e8d8c4;
+    background: var(--green);
+    color: var(--black);
 }
-
 
 .card-small {
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    opacity: 0.65;
+    font-size: 10px;
+    letter-spacing: 2px;
 }
-
 
 .orientation-card h3 {
-    margin: 15px 0;
+    margin: 12px 0;
 
-    font-family: "Playfair Display", serif;
-
-    font-size: 28px;
-
-    line-height: 1.3;
+    color: var(--white);
+    font-size: 21px;
+    line-height: 1.5;
 }
-
 
 .orientation-card h3 em {
-    color: #e1c9a9;
+    color: var(--green);
+    font-style: normal;
 }
-
 
 .card-line {
     width: 45px;
-    height: 1px;
+    height: 2px;
 
-    margin: 5px auto 15px;
+    margin: 8px auto 12px;
 
-    background: rgba(255, 255, 255, 0.4);
+    background: var(--green);
 }
-
 
 .card-bottom {
     font-size: 10px;
-
-    letter-spacing: 1px;
-
-    opacity: 0.7;
+    line-height: 1.5;
 }
 
+/* Petites cartes flottantes */
 
 .floating-card {
     position: absolute;
     z-index: 3;
 
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
-    padding: 13px 17px;
+    padding: 12px 16px;
 
-    background: white;
-
-    border-radius: 14px;
+    background: var(--white);
+    border-radius: 30px;
 
     box-shadow: var(--shadow);
 
     animation: floating 4s ease-in-out infinite;
 }
 
-
 .floating-card span {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
 
     display: grid;
     place-items: center;
 
     border-radius: 50%;
 
-    background: var(--cream-dark);
-
-    color: var(--beige-dark);
+    background: var(--green);
+    color: var(--blue);
 }
-
 
 .floating-card strong,
 .floating-card small {
     display: block;
-
-    line-height: 1.2;
 }
 
-
 .floating-card strong {
+    color: var(--black);
     font-size: 12px;
 }
 
-
 .floating-card small {
-    margin-top: 3px;
-
-    color: var(--text-light);
-
+    color: var(--text);
     font-size: 10px;
 }
 
-
 .floating-card-top {
     top: 70px;
-    right: 10px;
+    right: 0;
 }
-
 
 .floating-card-bottom {
     bottom: 65px;
-    left: 5px;
+    left: 0;
 
     animation-delay: 1.5s;
 }
 
-
 @keyframes floating {
-
     0%,
     100% {
         transform: translateY(0);
@@ -619,351 +586,302 @@ a {
     50% {
         transform: translateY(-8px);
     }
-
 }
 
 
 /* =========================================================
-   BANDEAU
+   9. BANDEAU D'ACCUEIL
 ========================================================= */
 
 .intro-band {
-    background: var(--beige-dark);
-    color: white;
-}
+    padding: 25px 0;
 
+    background: var(--blue);
+    color: var(--white);
+}
 
 .intro-band-content {
-    min-height: 100px;
+    min-height: 70px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
-
-    gap: 30px;
-
-    text-align: center;
+    gap: 25px;
 }
-
 
 .intro-band p {
-    max-width: 700px;
+    max-width: 750px;
 
-    font-family: "Playfair Display", serif;
-
-    font-size: 20px;
+    color: var(--white);
+    font-size: 16px;
 }
 
-
 .intro-band span {
-    color: #d8c4a7;
+    color: var(--green);
+    font-size: 24px;
 }
 
 
 /* =========================================================
-   SECTIONS
+   10. SECTIONS GÉNÉRALES
 ========================================================= */
 
 .section {
-    padding: 120px 0;
+    padding: 100px 0;
 }
-
 
 .about-section {
-    background: var(--cream);
-}
-
-
-.about-grid {
-    display: grid;
-
-    grid-template-columns: 0.8fr 1.2fr;
-
-    align-items: center;
-
-    gap: 100px;
+    background: var(--white);
 }
 
 
 /* =========================================================
-   ABOUT IMAGE
+   11. À PROPOS : MISE EN PAGE
 ========================================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+
+    align-items: center;
+    gap: 80px;
+}
 
 .about-image {
     position: relative;
 
-    min-height: 520px;
+    min-height: 440px;
 
     display: grid;
     place-items: center;
 }
 
+/* Décoration circulaire */
 
 .about-decoration {
     position: absolute;
 
-    width: 390px;
-    height: 450px;
+    width: 370px;
+    height: 370px;
 
-    border: 1px solid var(--beige);
-
-    border-radius: 200px 200px 30px 30px;
-
-    transform: rotate(5deg);
+    border: 2px solid var(--green);
+    border-radius: 50%;
 }
 
+/* Photo */
 
 .about-placeholder {
     position: relative;
 
-    width: 350px;
-    height: 420px;
+    width: 340px;
+    height: 340px;
+
+    overflow: hidden;
 
     display: grid;
     place-items: center;
 
-    border-radius: 190px 190px 25px 25px;
+    border-radius: 50%;
 
-    background:
-        linear-gradient(
-            145deg,
-            var(--blue),
-            var(--green)
-        );
-
-    color: var(--beige-dark);
-
-    text-align: center;
-
-    font-family: "Playfair Display", serif;
-
-    font-size: 30px;
+    background: var(--green);
 
     box-shadow: var(--shadow);
 }
 
+.about-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+}
 
 .about-placeholder span {
     opacity: 0.7;
 }
 
+/* Petit badge */
 
 .about-badge {
     position: absolute;
 
-    bottom: 45px;
-    right: 10px;
+    right: 0;
+    bottom: 35px;
 
-    padding: 18px 25px;
+    padding: 14px 20px;
 
     display: flex;
     flex-direction: column;
 
-    background: white;
+    border-radius: 30px;
 
-    border-radius: 13px;
+    background: var(--green);
+    color: var(--black);
 
     box-shadow: var(--shadow);
-
-    transform: rotate(-4deg);
 }
-
 
 .about-badge strong {
-    font-family: "Playfair Display", serif;
-
-    font-size: 18px;
+    font-size: 15px;
 }
 
-
 .about-badge span {
-    color: var(--text-light);
-
-    font-size: 10px;
+    font-size: 11px;
 }
 
 
 /* =========================================================
-   ABOUT CONTENT
+   12. À PROPOS : TEXTES ET VALEURS
 ========================================================= */
 
 .about-content h2,
 .section-heading h2,
 .contact-box h2,
 .formula-cta h2 {
-    margin: 17px 0 25px;
+    margin: 15px 0 22px;
 
-    font-family: "Playfair Display", serif;
+    color: var(--black);
 
-    font-size: clamp(34px, 4vw, 50px);
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
 
-    line-height: 1.15;
-
-    font-weight: 600;
+    line-height: 1.5;
 }
-
 
 .about-content h2 em,
 .contact-box h2 em,
 .formula-cta h2 em {
-    color: var(--beige);
-
-    font-style: italic;
+    color: var(--blue);
+    font-style: normal;
 }
-
 
 .about-content > p {
     max-width: 650px;
+    margin-bottom: 16px;
 
-    margin-bottom: 15px;
-
-    color: var(--text-light);
+    color: var(--text);
+    font-size: 14px;
 }
-
 
 .about-content strong {
-    color: var(--brown);
+    color: var(--black);
 }
 
-
-/* VALUES */
+/* Les trois valeurs */
 
 .about-values {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
     gap: 15px;
-
-    margin-top: 40px;
+    margin-top: 35px;
 }
-
 
 .about-values div {
-    padding: 18px;
+    padding: 15px;
 
-    border-top: 1px solid rgba(103, 87, 70, 0.2);
+    border-top: 3px solid var(--green);
 }
-
 
 .about-values span {
     display: block;
-
     margin-bottom: 8px;
 
-    color: var(--beige);
-
-    font-size: 11px;
+    color: var(--blue);
+    font-size: 12px;
     font-weight: 700;
 }
-
 
 .about-values strong {
     display: block;
 
-    font-family: "Playfair Display", serif;
-
-    font-size: 18px;
+    color: var(--black);
+    font-size: 13px;
 }
 
-
 .about-values p {
-    margin-top: 5px;
+    margin-top: 7px;
 
-    color: var(--text-light);
-
+    color: var(--text);
     font-size: 11px;
-
     line-height: 1.5;
 }
 
 
 /* =========================================================
-   AUDIENCE
+   13. POUR QUI ?
 ========================================================= */
 
 .audience-section {
-    background: #f1ece3;
+    background: var(--background-soft);
 }
-
 
 .section-heading {
-    max-width: 650px;
-
-    margin: 0 auto 55px;
+    max-width: 700px;
+    margin: 0 auto 50px;
 }
-
-
-.section-heading.centered {
-    text-align: center;
-}
-
 
 .section-heading h2 {
     margin-bottom: 13px;
 }
 
-
 .section-heading > p {
-    color: var(--text-light);
+    color: var(--text);
 }
 
+.section-heading.centered {
+    text-align: left;
+}
 
 .audience-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 22px;
 }
-
 
 .audience-card {
     position: relative;
 
-    padding: 38px 32px;
-
-    min-height: 330px;
-
-    background: var(--cream);
-
-    border: 1px solid rgba(103, 87, 70, 0.08);
-
-    border-radius: var(--radius);
+    min-height: 310px;
+    padding: 32px;
 
     overflow: hidden;
+
+    background: var(--white);
+    border: 1px solid rgba(48, 60, 233, 0.10);
+    border-radius: var(--radius);
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-
 .audience-card:hover {
-    transform: translateY(-7px);
-
+    transform: translateY(-6px);
     box-shadow: var(--shadow);
 }
 
-
 .audience-card.featured {
-    background: var(--beige-dark);
-    color: white;
+    background: var(--blue);
+    color: var(--white);
 }
-
 
 .audience-number {
     position: absolute;
+    top: 18px;
+    right: 22px;
 
-    top: 20px;
-    right: 25px;
-
-    font-size: 11px;
-
-    opacity: 0.5;
+    color: var(--blue);
+    font-size: 12px;
+    opacity: 0.7;
 }
 
+.featured .audience-number {
+    color: var(--green);
+}
 
 .audience-icon {
     width: 55px;
@@ -972,383 +890,320 @@ a {
     display: grid;
     place-items: center;
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
     border-radius: 50%;
 
-    background: var(--cream-dark);
-
-    color: var(--beige-dark);
+    background: var(--green);
+    color: var(--blue);
 
     font-size: 21px;
 }
 
-
 .featured .audience-icon {
-    background: rgba(255, 255, 255, 0.1);
-    color: #e5d4bb;
+    background: var(--green);
+    color: var(--blue);
 }
-
 
 .audience-card h3 {
     margin-bottom: 12px;
 
-    font-family: "Playfair Display", serif;
-
-    font-size: 27px;
+    color: var(--black);
+    font-size: 23px;
 }
-
 
 .audience-card p {
-    color: var(--text-light);
-
-    font-size: 14px;
+    color: var(--text);
+    font-size: 13px;
 }
 
-
-.featured p {
-    color: rgba(255, 255, 255, 0.7);
+.audience-card.featured h3,
+.audience-card.featured p {
+    color: var(--white);
 }
 
 
 /* =========================================================
-   CONTACT
+   14. CONTACT
 ========================================================= */
 
 .contact-section {
     padding-top: 100px;
-    padding-bottom: 120px;
-}
+    padding-bottom: 110px;
 
+    background: var(--white);
+}
 
 .contact-box {
     position: relative;
+    overflow: hidden;
 
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
-    gap: 70px;
+    gap: 55px;
+    padding: 60px;
 
-    padding: 65px;
+    border-radius: var(--radius);
 
-    border-radius: 35px;
-
-    background: var(--beige-dark);
-
-    color: white;
-
-    overflow: hidden;
+    background: var(--blue);
+    color: var(--white);
 }
-
 
 .contact-box::after {
     content: "";
 
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
 
-    right: -100px;
+    right: -90px;
     bottom: -150px;
 
+    border: 2px solid rgba(92, 255, 176, 0.35);
     border-radius: 50%;
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
 }
-
 
 .contact-box .section-label {
-    color: #ddc8aa;
+    color: var(--green);
 }
-
 
 .contact-box h2 {
-    font-size: 50px;
+    color: var(--white);
+    font-size: 40px;
 }
-
 
 .contact-box h2 em {
-    color: #ddc8aa;
+    color: var(--green);
 }
-
 
 .contact-text > p {
     max-width: 480px;
 
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--white);
+    font-size: 14px;
 }
-
 
 .contact-details {
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
 
-    gap: 14px;
+    gap: 12px;
 }
-
 
 .contact-item {
     display: flex;
-
     align-items: center;
-
     gap: 15px;
 
     padding: 15px 0;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
 }
 
-
 .contact-icon {
-    width: 43px;
-    height: 43px;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
 
     display: grid;
     place-items: center;
 
-    flex-shrink: 0;
-
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.1);
-
-    color: #e0ccb1;
+    background: var(--green);
+    color: var(--blue);
 }
-
 
 .contact-item small,
 .contact-item strong {
     display: block;
 }
 
-
 .contact-item small {
-    color: rgba(255, 255, 255, 0.5);
-
+    color: var(--green);
     font-size: 10px;
-
     text-transform: uppercase;
-
-    letter-spacing: 1px;
 }
-
 
 .contact-item strong {
     margin-top: 3px;
 
-    font-size: 14px;
-}
-
-
-.button-light {
-    margin-top: 15px;
-
-    width: max-content;
-
-    background: white;
-
-    color: var(--beige-dark);
-}
-
-
-.button-light:hover {
-    background: var(--cream);
+    color: var(--white);
+    font-size: 13px;
+    overflow-wrap: anywhere;
 }
 
 
 /* =========================================================
-   FOOTER
+   15. FOOTER
 ========================================================= */
 
 .footer {
-    padding-top: 65px;
+    padding-top: 60px;
 
-    background: #40372f;
-
-    color: white;
+    background: var(--black);
+    color: var(--white);
 }
-
 
 .footer-grid {
     display: grid;
-
     grid-template-columns: 1.5fr 0.7fr 0.8fr;
 
-    gap: 80px;
-
-    padding-bottom: 55px;
+    gap: 65px;
+    padding-bottom: 50px;
 }
-
 
 .footer-logo {
-    color: white;
+    color: var(--white);
 }
 
+.footer-logo strong {
+    color: var(--white);
+}
 
 .footer-logo small {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.65);
 }
-
 
 .footer-brand > p {
     max-width: 330px;
-
     margin-top: 20px;
 
-    color: rgba(255, 255, 255, 0.55);
-
-    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
 }
-
 
 .footer-column {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 
     gap: 9px;
 }
 
-
 .footer-column h4 {
     margin-bottom: 10px;
 
-    font-family: "Playfair Display", serif;
-
-    font-size: 17px;
+    color: var(--green);
+    font-size: 15px;
 }
-
 
 .footer-column a,
 .footer-column span {
-    color: rgba(255, 255, 255, 0.55);
-
+    color: rgba(255, 255, 255, 0.7);
     font-size: 12px;
 
     transition: color 0.2s ease;
 }
 
-
 .footer-column a:hover {
-    color: white;
+    color: var(--green);
 }
-
 
 .footer-bottom {
     min-height: 70px;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     gap: 20px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 
-    color: rgba(255, 255, 255, 0.4);
-
+    color: rgba(255, 255, 255, 0.6);
     font-size: 10px;
 }
 
-
 .footer-bottom div {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-
 .footer-bottom a:hover {
-    color: white;
+    color: var(--green);
 }
 
 
 /* =========================================================
-   PAGE FORMULES
+   16. PAGE FORMULES : INTRODUCTION
 ========================================================= */
 
 .formules-hero {
-    padding: 80px 0 75px;
+    padding: 75px 0 70px;
 
     background:
         radial-gradient(
             circle at 85% 20%,
-            rgba(184, 209, 223, 0.35),
-            transparent 30%
+            rgba(92, 255, 176, 0.20),
+            transparent 32%
         ),
-        var(--cream);
+        var(--background-soft);
 }
-
 
 .back-link {
     display: inline-flex;
+    margin-bottom: 35px;
 
-    margin-bottom: 50px;
-
-    color: var(--beige-dark);
-
+    color: var(--blue);
     font-size: 13px;
     font-weight: 600;
 
     transition: transform 0.2s ease;
 }
 
-
 .back-link:hover {
-    transform: translateX(-5px);
+    transform: translateX(-4px);
 }
-
 
 .formules-hero h1 {
-    max-width: 800px;
+    max-width: 750px;
 
-    margin: 15px 0 20px;
+    margin: 18px 0;
 
-    font-family: "Playfair Display", serif;
-
-    font-size: clamp(44px, 6vw, 70px);
-
-    line-height: 1.05;
-
-    letter-spacing: -2px;
+    color: var(--black);
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.5;
 }
 
+.formules-hero h1 span {
+    color: var(--blue);
+}
 
-.formules-hero > .container > p {
-    max-width: 650px;
+.formules-hero p {
+    max-width: 700px;
 
-    color: var(--text-light);
-
-    font-size: 16px;
+    color: var(--text);
+    font-size: 15px;
 }
 
 
 /* =========================================================
-   FORMULES CARDS
+   17. PAGE FORMULES : GRILLE
 ========================================================= */
 
 .formules-section {
-    padding: 70px 0 110px;
-
-    background: #f1ece3;
+    padding: 85px 0;
+    background: var(--white);
 }
-
 
 .formules-grid {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     align-items: stretch;
-
-    gap: 20px;
+    gap: 22px;
 }
 
+
+/* =========================================================
+   18. CARTES DES FORMULES
+========================================================= */
 
 .formula-card {
     position: relative;
@@ -1356,69 +1211,64 @@ a {
     display: flex;
     flex-direction: column;
 
-    min-height: 650px;
+    min-width: 0;
+    min-height: 570px;
+    padding: 30px;
 
-    padding: 38px 32px;
+    border: 1px solid rgba(48, 60, 233, 0.15);
+    border-radius: var(--radius);
 
-    border-radius: 32px;
+    background: var(--background-soft);
 
-    background: white;
-
-    border: 1px solid rgba(0, 0, 0, 0.04);
-
-    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
 
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-
 .formula-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow: 0 25px 50px rgba(70, 57, 45, 0.12);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
 }
 
-
-/* COULEURS */
+/* Couleurs des cartes */
 
 .formula-blue {
-    background: #e9f2f6;
+    border-top: 5px solid var(--blue);
+    background: #f5f6ff;
 }
-
 
 .formula-green {
-    background: #e8f1e9;
+    border-top: 5px solid var(--green);
+    background: #f1fff8;
 }
 
+.formula-yellow {
+    border-top: 5px solid var(--green);
+    background: #f5fff9;
+}
 
 .formula-red {
-    background: #f5e6e3;
+    border-top: 5px solid var(--blue);
+    background: #f5f6ff;
 }
 
-
-/* TOP */
+/* Partie supérieure */
 
 .formula-top {
     display: flex;
-
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     margin-bottom: 25px;
 }
 
-
 .formula-number {
-    font-size: 11px;
+    color: var(--blue);
+    font-size: 13px;
     font-weight: 700;
-
-    letter-spacing: 1px;
-
-    opacity: 0.5;
 }
-
 
 .formula-icon {
     width: 45px;
@@ -1429,222 +1279,239 @@ a {
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--green);
+    color: var(--blue);
 
-    font-size: 18px;
+    font-size: 19px;
 }
 
+/* Titres et introductions */
 
 .formula-card h2 {
-    margin-bottom: 13px;
+    margin-bottom: 15px;
 
-    font-family: "Playfair Display", serif;
+    color: var(--black);
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.5;
 
-    font-size: 32px;
-
-    line-height: 1.15;
+    overflow-wrap: break-word;
 }
-
 
 .formula-intro {
-    min-height: 90px;
+    margin-bottom: 20px;
 
-    color: rgba(57, 53, 47, 0.7);
-
+    color: var(--text);
     font-size: 13px;
-
-    line-height: 1.7;
+    line-height: 1.5;
 }
-
 
 .formula-divider {
     width: 100%;
     height: 1px;
 
-    margin: 25px 0;
+    margin: 8px 0 20px;
 
-    background: rgba(57, 53, 47, 0.12);
+    background: rgba(48, 60, 233, 0.15);
 }
-
 
 .formula-card h4 {
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 
-    font-size: 11px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
 }
 
+/* Liste des prestations */
 
 .formula-list {
     display: flex;
     flex-direction: column;
+    gap: 12px;
 
-    gap: 9px;
+    margin: 0 0 20px;
+    padding: 0;
 
     list-style: none;
 }
 
-
 .formula-list li {
     display: flex;
+    align-items: flex-start;
+    gap: 9px;
 
-    gap: 10px;
-
-    color: rgba(57, 53, 47, 0.72);
-
+    color: var(--text);
     font-size: 12px;
+    line-height: 1.5;
 }
 
-
 .formula-list li span {
+    flex-shrink: 0;
+
+    color: var(--blue);
     font-weight: 700;
 }
 
+/* Prix */
 
 .formula-price {
     display: flex;
+    flex-direction: column;
 
-    align-items: baseline;
-
-    gap: 10px;
+    gap: 3px;
 
     margin-top: auto;
+    padding-top: 25px;
 
-    padding-top: 30px;
+    color: var(--black);
 }
-
 
 .formula-price small {
-    color: rgba(57, 53, 47, 0.55);
-
-    font-size: 10px;
+    color: var(--text);
+    font-size: 11px;
 }
-
 
 .formula-price strong {
-    font-family: "Playfair Display", serif;
-
-    font-size: 42px;
+    color: var(--blue);
+    font-size: 30px;
+    font-weight: 700;
 }
 
+/* Bouton des formules */
 
 .formula-button {
-    display: flex;
+    min-height: 48px;
 
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    min-height: 48px;
-
     margin-top: 20px;
+    padding: 10px 15px;
 
     border-radius: 100px;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: var(--green);
+    color: var(--black);
 
     font-size: 12px;
     font-weight: 700;
+    text-align: center;
 
     transition:
         background 0.3s ease,
+        color 0.3s ease,
         transform 0.3s ease;
 }
 
-
 .formula-button:hover {
-    background: white;
-
+    background: var(--blue);
+    color: var(--white);
     transform: translateY(-2px);
 }
 
-
-/* FORMULE POPULAIRE */
+/* Formule mise en avant */
 
 .formula-card.popular {
-    border: 2px solid rgba(84, 116, 91, 0.18);
+    border: 2px solid var(--green);
 }
-
 
 .popular-label {
     position: absolute;
-
     top: 0;
     left: 50%;
 
     transform: translateX(-50%);
 
-    padding: 7px 17px;
+    padding: 7px 16px;
 
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 18px 18px;
 
-    background: var(--green-dark);
+    background: var(--green);
+    color: var(--black);
 
-    color: white;
-
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
-
-    letter-spacing: 1px;
+    text-align: center;
 }
 
 
-/* NOTE */
+/* =========================================================
+   19. NOTE SOUS LES FORMULES
+========================================================= */
 
 .formula-note {
     display: flex;
-
     align-items: center;
-    justify-content: center;
-
     gap: 15px;
 
-    max-width: 700px;
+    max-width: 750px;
 
-    margin: 55px auto 0;
+    margin: 45px auto 0;
+    padding: 20px;
 
-    text-align: center;
+    border-radius: var(--radius-small);
 
-    color: var(--text-light);
+    background: var(--background-soft);
+}
 
+.formula-note > span {
+    flex-shrink: 0;
+
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    color: var(--blue);
+}
+
+.formula-note p {
+    color: var(--text);
     font-size: 12px;
 }
 
 
-.formula-note > span {
-    color: var(--beige);
-}
-
-
 /* =========================================================
-   FORMULE CTA
+   20. APPEL À L'ACTION PAGE FORMULES
 ========================================================= */
 
 .formula-cta {
-    padding: 110px 0;
+    padding: 85px 0;
 
-    text-align: center;
-
-    background: var(--cream);
+    background: var(--background-soft);
 }
-
 
 .formula-cta > .container {
-    max-width: 700px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+.formula-cta h2 {
+    margin: 15px 0 20px;
+}
+
+.formula-cta h2 em {
+    color: var(--blue);
+    font-style: normal;
+}
 
 .formula-cta p {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
-    color: var(--text-light);
+    color: var(--text);
+    font-size: 14px;
 }
 
 
 /* =========================================================
-   RESPONSIVE TABLETTE
+   21. RESPONSIVE TABLETTES
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -1653,122 +1520,74 @@ a {
         min-height: 75px;
     }
 
-
     .nav-menu {
         gap: 15px;
     }
 
-
     .hero-grid {
         grid-template-columns: 1fr;
-
         gap: 40px;
     }
 
-
     .hero-text {
-        text-align: center;
+        text-align: left;
     }
-
-
-    .hero-description {
-        margin: auto;
-    }
-
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-
-    .hero-note {
-        justify-content: center;
-    }
-
 
     .hero-visual {
-        min-height: 470px;
+        min-height: 450px;
     }
-
 
     .about-grid {
         grid-template-columns: 1fr;
-
-        gap: 60px;
+        gap: 45px;
     }
-
 
     .about-image {
         max-width: 500px;
-
         width: 100%;
-
-        margin: auto;
+        margin: 0 auto;
     }
-
 
     .about-content {
-        text-align: center;
+        text-align: left;
     }
-
-
-    .about-content > p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
 
     .audience-grid {
         grid-template-columns: 1fr;
-
         max-width: 650px;
-
-        margin: auto;
+        margin: 0 auto;
     }
-
 
     .audience-card {
         min-height: auto;
     }
 
-
     .contact-box {
         grid-template-columns: 1fr;
-
         gap: 30px;
     }
 
-
     .formules-grid {
-        grid-template-columns: 1fr;
-
-        max-width: 600px;
-
-        margin: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 
     .formula-card {
-        min-height: 600px;
+        min-height: 560px;
     }
-
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-
-        gap: 45px;
+        gap: 40px;
     }
-
 
     .footer-brand {
         grid-column: 1 / -1;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE MOBILE
+   22. RESPONSIVE MOBILES
 ========================================================= */
 
 @media (max-width: 650px) {
@@ -1777,231 +1596,227 @@ a {
         width: min(100% - 30px, 1120px);
     }
 
-
-    /* HEADER */
+    /* Navigation */
 
     .navigation {
         flex-direction: column;
+        align-items: flex-start;
 
         padding: 15px 0;
-
         gap: 15px;
     }
-
 
     .nav-menu {
         width: 100%;
 
-        justify-content: center;
-
+        justify-content: flex-start;
         flex-wrap: wrap;
 
-        gap: 10px 16px;
+        gap: 10px 15px;
 
-        font-size: 12px;
+        font-size: 11px;
     }
-
 
     .nav-button {
         padding: 8px 13px;
     }
 
-
-    /* HERO */
+    /* Accueil */
 
     .hero {
         padding: 65px 0 70px;
     }
 
-
     .hero h1 {
-        font-size: 45px;
-
-        letter-spacing: -1px;
+        font-size: 38px;
+        letter-spacing: -0.5px;
     }
-
 
     .hero-description {
-        font-size: 15px;
+        font-size: 14px;
     }
-
 
     .hero-buttons {
         flex-direction: column;
+        align-items: stretch;
     }
-
 
     .button {
         width: 100%;
     }
 
-
     .hero-visual {
-        min-height: 390px;
+        min-height: 380px;
     }
-
 
     .circle-one {
-        width: 300px;
-        height: 300px;
+        width: 290px;
+        height: 290px;
     }
-
 
     .circle-two {
-        width: 250px;
-        height: 250px;
+        width: 235px;
+        height: 235px;
     }
-
 
     .orientation-card {
-        width: 240px;
-        min-height: 310px;
-
-        padding: 35px 25px;
+        width: 255px;
+        height: 255px;
+        padding: 25px;
     }
-
 
     .orientation-card h3 {
-        font-size: 24px;
-    }
-
-
-    .floating-card-top {
-        top: 25px;
-        right: 0;
-    }
-
-
-    .floating-card-bottom {
-        bottom: 25px;
-        left: 0;
-    }
-
-
-    /* BANDEAU */
-
-    .intro-band-content {
-        padding: 25px 0;
-    }
-
-
-    .intro-band p {
         font-size: 17px;
     }
 
-
-    /* SECTIONS */
-
-    .section {
-        padding: 80px 0;
+    .card-icon {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 8px;
     }
 
-
-    /* ABOUT */
-
-    .about-image {
-        min-height: 400px;
-    }
-
-
-    .about-decoration {
-        width: 280px;
-        height: 350px;
-    }
-
-
-    .about-placeholder {
-        width: 250px;
-        height: 330px;
-    }
-
-
-    .about-badge {
+    .floating-card-top {
+        top: 15px;
         right: 0;
-        bottom: 20px;
     }
 
-
-    .about-values {
-        grid-template-columns: 1fr;
-
-        text-align: left;
+    .floating-card-bottom {
+        bottom: 15px;
+        left: 0;
     }
 
+    /* Bandeau */
 
-    /* CONTACT */
-
-    .contact-box {
-        padding: 40px 25px;
-
-        border-radius: 25px;
-    }
-
-
-    .contact-box h2 {
-        font-size: 40px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-
-    .footer-brand {
-        grid-column: auto;
-    }
-
-
-    .footer-bottom {
+    .intro-band-content {
         padding: 20px 0;
-
-        flex-direction: column;
-
         align-items: flex-start;
     }
 
-
-    .footer-bottom div {
-        flex-wrap: wrap;
+    .intro-band p {
+        font-size: 14px;
     }
 
+    /* Sections */
 
-    /* FORMULES */
+    .section {
+        padding: 70px 0;
+    }
+
+    /* À propos */
+
+    .about-image {
+        min-height: 330px;
+    }
+
+    .about-decoration {
+        width: 290px;
+        height: 290px;
+    }
+
+    .about-placeholder {
+        width: 260px;
+        height: 260px;
+    }
+
+    .about-badge {
+        right: 0;
+        bottom: 0;
+        padding: 11px 15px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Contact */
+
+    .contact-box {
+        padding: 35px 23px;
+        border-radius: 22px;
+    }
+
+    .contact-box h2 {
+        font-size: 30px;
+    }
+
+    .contact-item strong {
+        font-size: 11px;
+    }
+
+    /* Formules */
 
     .formules-hero {
         padding: 55px 0;
     }
 
-
     .formules-hero h1 {
-        font-size: 44px;
-
-        letter-spacing: -1px;
+        font-size: 34px;
     }
-
 
     .formules-section {
-        padding: 45px 0 75px;
+        padding: 55px 0;
     }
 
+    .formules-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
 
     .formula-card {
-        padding: 30px 25px;
+        min-height: auto;
+        padding: 25px;
     }
 
-
-    .formula-card h2 {
-        font-size: 29px;
+    .formula-price {
+        margin-top: 15px;
     }
-
 
     .formula-note {
         align-items: flex-start;
+        padding: 15px;
     }
 
+    .formula-cta {
+        padding: 65px 0;
+    }
+
+    /* Pied de page */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        padding: 20px 0;
+        gap: 12px;
+    }
 }
+
+
+/* =========================================================
+   23. ACCESSIBILITÉ : MOUVEMENTS RÉDUITS
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
