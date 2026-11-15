@@ -15,43 +15,77 @@
 
 <body>
 
+    <!-- LIEN D'ACCESSIBILITÉ -->
+
+    <a class="skip-link" href="#contenu-principal">
+        Aller au contenu principal
+    </a>
+
+
     <!-- HEADER -->
 
     <header class="header">
+
         <div class="container navigation">
 
             <a href="index.html" class="logo">
-                <span class="logo-symbol">✦</span>
+
+                <span class="logo-symbol" aria-hidden="true">✦</span>
 
                 <span>
                     <strong>Caroline BECAMEL</strong>
                     <small>Conseillère en orientation scolaire indépendante</small>
                 </span>
+
             </a>
 
-            <nav class="nav-menu">
-                <a href="index.html">Accueil</a>
-                <a href="index.html#apropos">À propos de moi</a>
-                <a href="index.html#contact">Contact</a>
-                <a href="formules.html" class="nav-button active">Mes formules</a>
+
+            <nav class="nav-menu" aria-label="Navigation principale">
+
+                <a href="index.html">
+                    Accueil
+                </a>
+
+                <a href="index.html#apropos">
+                    À propos de moi
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="formules.html"
+                    class="nav-button active"
+                    aria-current="page"
+                >
+                    Mes formules
+                </a>
+
             </nav>
 
         </div>
+
     </header>
 
 
-    <main>
+    <!-- CONTENU PRINCIPAL -->
 
-        <!-- HERO -->
+    <main id="contenu-principal" tabindex="-1">
+
+        <!-- EN-TÊTE -->
 
         <section class="formules-hero">
+
             <div class="container">
 
                 <a href="index.html" class="back-link">
                     ← Retour à l'accueil
                 </a>
 
-                <span class="section-label">MES FORMULES</span>
+                <span class="section-label">
+                    MES FORMULES
+                </span>
 
                 <h1>
                     Choisissez la formule
@@ -65,52 +99,68 @@
                 </p>
 
             </div>
+
         </section>
 
 
-        <!-- LES TROIS FORMULES -->
+        <!-- FORMULES -->
 
-        <section class="formules-section">
+        <section class="formules-section" aria-label="Les formules d'accompagnement">
+
             <div class="container">
 
                 <div class="formules-grid">
 
 
-                    <!-- FORMULE 0 : ATELIER COLLECTIF -->
-                    <!-- MASQUÉ AU LANCEMENT -->
+                    <!-- =====================================
+                         FORMULE 0 : ATELIER COLLECTIF
+                         MASQUÉ AU LANCEMENT
+                         ===================================== -->
 
-                    <article class="formula-card formula-yellow atelier-cache" hidden>
+                    <article
+                        class="formula-card formula-yellow atelier-cache"
+                        hidden
+                    >
 
                         <div class="formula-top">
-                            <span class="formula-number">01</span>
-                            <span class="formula-icon">✦</span>
+
+                            <span class="formula-number" aria-hidden="true">
+                                01
+                            </span>
+
+                            <span class="formula-icon" aria-hidden="true">
+                                ✦
+                            </span>
+
                         </div>
 
-                        <h2>Atelier collectif : Mieux se connaître pour bien s'orienter</h2>
+                        <h2>
+                            Atelier collectif : Mieux se connaître pour bien s'orienter
+                        </h2>
 
                         <p class="formula-intro">
                             Un temps d'échange interactif en petit groupe pour faire émerger
                             vos forces et enrichir votre réflexion grâce au collectif.
                         </p>
 
-                        <div class="formula-divider"></div>
+                        <div class="formula-divider" aria-hidden="true"></div>
 
-                        <h4>Au programme :</h4>
+                        <h3>Au programme :</h3>
 
                         <ul class="formula-list">
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Format : en ligne (visio).
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Durée : 1h30.
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Groupe restreint : 2 à 5 participants maximum,
                                 pour garantir un cadre bienveillant et de vrais échanges.
                             </li>
@@ -128,13 +178,22 @@
                     </article>
 
 
-                    <!-- FORMULE 1 -->
+                    <!-- =====================================
+                         FORMULE 1
+                         ===================================== -->
 
                     <article class="formula-card formula-blue">
 
                         <div class="formula-top">
-                            <span class="formula-number">01</span>
-                            <span class="formula-icon">◌</span>
+
+                            <span class="formula-number" aria-hidden="true">
+                                01
+                            </span>
+
+                            <span class="formula-icon" aria-hidden="true">
+                                ◌
+                            </span>
+
                         </div>
 
                         <h2>Le bilan d'orientation</h2>
@@ -145,26 +204,26 @@
                             premières pistes.
                         </p>
 
-                        <div class="formula-divider"></div>
+                        <div class="formula-divider" aria-hidden="true"></div>
 
-                        <h4>Au programme :</h4>
+                        <h3>Au programme :</h3>
 
                         <ul class="formula-list">
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 2 entretiens individuels pour découvrir
                                 vos forces, vos motivations et vos besoins.
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 1 entretien dédié au passage des tests
                                 psychométriques.
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 1 entretien de restitution pour formaliser
                                 votre projet.
                             </li>
@@ -182,50 +241,61 @@
                     </article>
 
 
-                    <!-- FORMULE 2 -->
+                    <!-- =====================================
+                         FORMULE 2
+                         ===================================== -->
 
                     <article class="formula-card formula-green popular">
 
                         <div class="formula-top">
-                            <span class="formula-number">02</span>
-                            <span class="formula-icon">✦</span>
+
+                            <span class="formula-number" aria-hidden="true">
+                                02
+                            </span>
+
+                            <span class="formula-icon" aria-hidden="true">
+                                ✦
+                            </span>
+
                         </div>
 
-                        <h2>Accompagnement Parcoursup individuel en distanciel</h2>
+                        <h2>
+                            Accompagnement Parcoursup individuel en distanciel
+                        </h2>
 
                         <p class="formula-intro">
                             Un suivi sur mesure en 6 séances pour aborder chaque
                             étape de Parcoursup.
                         </p>
 
-                        <div class="formula-divider"></div>
+                        <div class="formula-divider" aria-hidden="true"></div>
 
-                        <h4>Au programme :</h4>
+                        <h3>Au programme :</h3>
 
                         <ul class="formula-list">
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Entretien découverte
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Aide à la création de dossier et de la complétion du dossier
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Conseil à la formulation des voeux
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Accompagnement et conseil à la rédaction des éléments de candidature
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Suivi des échéances clefs de Parcoursup
                             </li>
 
@@ -242,13 +312,22 @@
                     </article>
 
 
-                    <!-- FORMULE 3 -->
+                    <!-- =====================================
+                         FORMULE 3
+                         ===================================== -->
 
                     <article class="formula-card formula-red">
 
                         <div class="formula-top">
-                            <span class="formula-number">03</span>
-                            <span class="formula-icon">♡</span>
+
+                            <span class="formula-number" aria-hidden="true">
+                                03
+                            </span>
+
+                            <span class="formula-icon" aria-hidden="true">
+                                ♡
+                            </span>
+
                         </div>
 
                         <h2>Intervention / Atelier</h2>
@@ -257,34 +336,34 @@
                             Pour les associations des parents d' élèves et les établissements scolaires
                         </p>
 
-                        <div class="formula-divider"></div>
+                        <div class="formula-divider" aria-hidden="true"></div>
 
-                        <h4>Au programme :</h4>
+                        <h3>Au programme :</h3>
 
                         <ul class="formula-list">
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Accompagnement personnalisé.
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Plusieurs rendez-vous.
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Suivi des recherches.
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Aide à la prise de décision.
                             </li>
 
                             <li>
-                                <span>✓</span>
+                                <span aria-hidden="true">✓</span>
                                 Bilan de fin d'accompagnement.
                             </li>
 
@@ -303,11 +382,11 @@
                 </div>
 
 
-                <!-- NOTE -->
+                <!-- NOTE D'INFORMATION -->
 
                 <div class="formula-note">
 
-                    <span>✦</span>
+                    <span aria-hidden="true">✦</span>
 
                     <p>
                         Chaque accompagnement peut être adapté aux besoins
@@ -318,15 +397,19 @@
                 </div>
 
             </div>
+
         </section>
 
 
-        <!-- CTA -->
+        <!-- CONTACT FINAL -->
 
         <section class="formula-cta">
+
             <div class="container">
 
-                <span class="section-label">Une question ?</span>
+                <span class="section-label">
+                    Une question ?
+                </span>
 
                 <h2>
                     Parlons ensemble de
@@ -343,6 +426,7 @@
                 </a>
 
             </div>
+
         </section>
 
     </main>
@@ -358,7 +442,7 @@
 
                 <a href="index.html" class="logo footer-logo">
 
-                    <span class="logo-symbol">✦</span>
+                    <span class="logo-symbol" aria-hidden="true">✦</span>
 
                     <span>
                         <strong>Caroline BECAMEL</strong>
@@ -379,7 +463,9 @@
 
                 <h4>Navigation</h4>
 
-                <a href="index.html">Accueil</a>
+                <a href="index.html">
+                    Accueil
+                </a>
 
                 <a href="index.html#apropos">
                     À propos de moi
@@ -413,19 +499,16 @@
         </div>
 
 
-        <!-- ASSOCIATION DES COSI -->
+        <!-- ASSOCIATION COSI -->
 
         <div class="container footer-cosi">
 
             <a
+                class="footer-cosi-link"
                 href="https://www.assocosi-orientation.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-cosi-link"
             >
-
-                <!-- Médaillon provisoire.
-                     À remplacer par le logo officiel. -->
 
                 <span class="footer-cosi-mark" aria-hidden="true">
                     COSI
@@ -434,11 +517,11 @@
                 <span class="footer-cosi-text">
 
                     <strong>
-                        Membre de l'Association des COSI
+                        Membre de l’Association des COSI
                     </strong>
 
                     <small>
-                        Conseillers d'Orientation Scolaire Indépendants
+                        Conseillers d’Orientation Scolaire Indépendants
                     </small>
 
                 </span>
@@ -455,7 +538,9 @@
             </span>
 
             <div>
-                <a href="mentions.html">Mentions légales</a>
+                <a href="mentions.html">
+                    Mentions légales
+                </a>
             </div>
 
         </div>
@@ -464,5 +549,3 @@
 
 </body>
 </html>
-
-

@@ -1,44 +1,57 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="Accompagnement personnalisé à l'orientation scolaire pour collégiens et lycéens.">
-    <meta name="author" content="Nom Prénom">
+    <meta name="author" content="Caroline BECAMEL">
 
-    <title>Conseillère en orientation</title>
+    <title>Caroline BECAMEL | Conseillère en orientation scolaire</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+    <a class="skip-link" href="#contenu-principal">
+        Aller au contenu principal
+    </a>
+
+    <!-- HEADER -->
 
     <header class="header">
 
         <div class="container navigation">
 
-            <!-- NOM / LOGO -->
             <a href="index.html" class="logo">
-                <span class="logo-symbol">✦</span>
+                <span class="logo-symbol" aria-hidden="true">✦</span>
+
                 <span>
                     <strong>Caroline BECAMEL</strong>
                     <small>Conseillère en orientation scolaire indépendante</small>
                 </span>
             </a>
 
-            <!-- MENU -->
-            <nav class="nav-menu">
-                <a href="#accueil">Accueil</a>
-                <a href="#apropos">À propos de moi</a>
-                <a href="#contact">Contact</a>
-                <a href="formules.html" class="nav-button">Mes formules</a>
+            <nav class="nav-menu" aria-label="Navigation principale">
+
+                <a href="#accueil" aria-current="page">
+                    Accueil
+                </a>
+
+                <a href="#apropos">
+                    À propos de moi
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a href="formules.html" class="nav-button">
+                    Mes formules
+                </a>
+
             </nav>
 
         </div>
@@ -46,11 +59,11 @@
     </header>
 
 
-    <!-- =====================================================
-         HERO / ACCUEIL
-    ====================================================== -->
+    <!-- CONTENU PRINCIPAL -->
 
-    <main>
+    <main id="contenu-principal" tabindex="-1">
+
+        <!-- ACCUEIL -->
 
         <section id="accueil" class="hero">
 
@@ -74,6 +87,7 @@
                     </p>
 
                     <div class="hero-buttons">
+
                         <a href="formules.html" class="button button-primary">
                             Découvrez mon accompagnement
                         </a>
@@ -81,21 +95,24 @@
                         <a href="#apropos" class="button button-secondary">
                             En savoir plus
                         </a>
+
                     </div>
 
                 </div>
 
 
-                <!-- Illustration décorative -->
+                <!-- ILLUSTRATION -->
 
                 <div class="hero-visual">
 
-                    <div class="visual-circle circle-one"></div>
-                    <div class="visual-circle circle-two"></div>
+                    <div class="visual-circle circle-one" aria-hidden="true"></div>
+                    <div class="visual-circle circle-two" aria-hidden="true"></div>
 
                     <div class="orientation-card">
 
-                        <div class="card-icon">✦</div>
+                        <div class="card-icon" aria-hidden="true">
+                            ✦
+                        </div>
 
                         <p class="card-small">
                             TON AVENIR
@@ -106,7 +123,7 @@
                             <em>Avenir</em> ensemble ?
                         </h3>
 
-                        <div class="card-line"></div>
+                        <div class="card-line" aria-hidden="true"></div>
 
                         <p class="card-bottom">
                             Connaissance de soi · Avenir · Réussite
@@ -115,11 +132,14 @@
                     </div>
 
                     <div class="floating-card floating-card-top">
-                        <span>♡</span>
+
+                        <span aria-hidden="true">♡</span>
+
                         <div>
                             <strong>Confiance</strong>
                             <small>en soi</small>
                         </div>
+
                     </div>
 
                 </div>
@@ -129,9 +149,7 @@
         </section>
 
 
-        <!-- =====================================================
-             BANDEAU
-        ====================================================== -->
+        <!-- BANDEAU -->
 
         <section class="intro-band">
 
@@ -142,16 +160,14 @@
                     par une meilleure connaissance de soi.
                 </p>
 
-                <span>✦</span>
+                <span aria-hidden="true">✦</span>
 
             </div>
 
         </section>
 
 
-        <!-- =====================================================
-             À PROPOS
-        ====================================================== -->
+        <!-- À PROPOS -->
 
         <section id="apropos" class="section about-section">
 
@@ -159,10 +175,15 @@
 
                 <div class="about-image">
 
-                    <div class="about-decoration"></div>
+                    <div class="about-decoration" aria-hidden="true"></div>
 
                     <div class="about-placeholder">
-                        <img src="Image/BCC.jpg" alt="Photo profil">
+
+                        <img
+                            src="Image/BCC.jpg"
+                            alt="Portrait de Caroline BECAMEL, conseillère en orientation scolaire indépendante"
+                        >
+
                     </div>
 
                     <div class="about-badge">
@@ -216,21 +237,39 @@
                     <div class="about-values">
 
                         <div>
+
                             <span>01</span>
+
                             <strong>La Clarté</strong>
-                            <p>Transformer vos aspirations en un projet structuré et réaliste.</p>
+
+                            <p>
+                                Transformer vos aspirations en un projet structuré et réaliste.
+                            </p>
+
                         </div>
 
                         <div>
+
                             <span>02</span>
+
                             <strong>L'Ouverture d'esprit</strong>
-                            <p>Explorer toutes les opportunités, mêmes plus atypiques.</p>
+
+                            <p>
+                                Explorer toutes les opportunités, mêmes plus atypiques.
+                            </p>
+
                         </div>
 
                         <div>
+
                             <span>03</span>
+
                             <strong>La Confiance en soi</strong>
-                            <p>Conprendre vos forces et vos motivations. Vous avez le pouvoir d'agir.</p>
+
+                            <p>
+                                Conprendre vos forces et vos motivations. Vous avez le pouvoir d'agir.
+                            </p>
+
                         </div>
 
                     </div>
@@ -242,9 +281,7 @@
         </section>
 
 
-        <!-- =====================================================
-             POUR QUI ?
-        ====================================================== -->
+        <!-- POUR QUI ? -->
 
         <section class="section audience-section">
 
@@ -274,7 +311,7 @@
 
                         <div class="audience-number">01</div>
 
-                        <span class="audience-icon">◌</span>
+                        <span class="audience-icon" aria-hidden="true">◌</span>
 
                         <h3>Collégiens</h3>
 
@@ -287,11 +324,11 @@
                     </article>
 
 
-                    <article class="audience-card featured">
+                    <article class="audience-card">
 
                         <div class="audience-number">02</div>
 
-                        <span class="audience-icon">✦</span>
+                        <span class="audience-icon" aria-hidden="true">✦</span>
 
                         <h3>Lycéens</h3>
 
@@ -308,7 +345,7 @@
 
                         <div class="audience-number">03</div>
 
-                        <span class="audience-icon">♡</span>
+                        <span class="audience-icon" aria-hidden="true">♡</span>
 
                         <h3>Parents</h3>
 
@@ -326,9 +363,7 @@
         </section>
 
 
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
+        <!-- CONTACT -->
 
         <section id="contact" class="section contact-section">
 
@@ -358,9 +393,12 @@
 
                     <div class="contact-details">
 
-                        <a href="mailto:carolinebecamel.conseil@gmail.com" class="contact-item">
+                        <a
+                            href="mailto:carolinebecamel.conseil@gmail.com"
+                            class="contact-item"
+                        >
 
-                            <span class="contact-icon">✉</span>
+                            <span class="contact-icon" aria-hidden="true">✉</span>
 
                             <div>
                                 <small>Email</small>
@@ -370,13 +408,16 @@
                         </a>
 
 
-                        <a href="tel:+33685024338" class="contact-item">
+                        <a
+                            href="tel:+33685024338"
+                            class="contact-item"
+                        >
 
-                            <span class="contact-icon">☎</span>
+                            <span class="contact-icon" aria-hidden="true">☎</span>
 
                             <div>
                                 <small>Téléphone</small>
-                                <strong>06 85 02 43 38 </strong>
+                                <strong>06 85 02 43 38</strong>
                             </div>
 
                         </a>
@@ -384,7 +425,7 @@
 
                         <div class="contact-item">
 
-                            <span class="contact-icon">⌖</span>
+                            <span class="contact-icon" aria-hidden="true">⌖</span>
 
                             <div>
                                 <small>Secteur</small>
@@ -393,10 +434,13 @@
 
                         </div>
 
-                        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30In2QGvFFecJZGm1IWlLlluDCuy_6nK4p3gNEUIT5UaCzyDM_tT93EmMpV7qVhU190xleQUhc"
+
+                        <a
+                            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30In2QGvFFecJZGm1IWlLlluDCuy_6nK4p3gNEUIT5UaCzyDM_tT93EmMpV7qVhU190xleQUhc"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="button button-light">
+                            class="button button-light"
+                        >
                             Me contacter pour une visio découverte gratuite
                         </a>
 
@@ -411,9 +455,7 @@
     </main>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- FOOTER -->
 
     <footer class="footer">
 
@@ -423,7 +465,7 @@
 
                 <a href="index.html" class="logo footer-logo">
 
-                    <span class="logo-symbol">✦</span>
+                    <span class="logo-symbol" aria-hidden="true">✦</span>
 
                     <span>
                         <strong>Caroline BECAMEL</strong>
@@ -460,7 +502,7 @@
                     carolinebecamel.conseil@gmail.com
                 </a>
 
-                <a href="tel:+336850024338">
+                <a href="tel:+33685024338">
                     06 85 02 43 38
                 </a>
 
@@ -473,32 +515,31 @@
         </div>
 
 
-        <!-- ASSOCIATION DES COSI -->
+        <!-- ASSOCIATION COSI -->
 
         <div class="container footer-cosi">
 
             <a
+                class="footer-cosi-link"
                 href="https://www.assocosi-orientation.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="footer-cosi-link"
             >
-
-                <!-- Médaillon provisoire.
-                     À remplacer par le logo officiel. -->
 
                 <span class="footer-cosi-mark" aria-hidden="true">
                     COSI
                 </span>
 
                 <span class="footer-cosi-text">
+
                     <strong>
-                        Membre de l'Association des COSI
+                        Membre de l’Association des COSI
                     </strong>
 
                     <small>
-                        Conseillers d'Orientation Scolaire Indépendants
+                        Conseillers d’Orientation Scolaire Indépendants
                     </small>
+
                 </span>
 
             </a>
@@ -513,7 +554,9 @@
             </span>
 
             <div>
-                <a href="mentions.html">Mentions légales</a>
+                <a href="mentions.html">
+                    Mentions légales
+                </a>
             </div>
 
         </div>
@@ -522,4 +565,3 @@
 
 </body>
 </html>
-
